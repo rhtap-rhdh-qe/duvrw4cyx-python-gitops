@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: duvrw4cyx-python-gitops
+  description: This is GitOps manifest for duvrw4cyx-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=duvrw4cyx-python
+    backstage.io/kubernetes-id: duvrw4cyx-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: duvrw4cyx-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:duvrw4cyx-python
